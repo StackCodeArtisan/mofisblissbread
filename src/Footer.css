@@ -1,0 +1,151 @@
+.footer {
+  background: #722f37;
+  color: #fffacd;
+  padding: 40px 0 20px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23fffacd" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  animation: float 15s ease-in-out infinite;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  min-width: 220px;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.footer-section h3 {
+  margin-bottom: 12px;
+  color: #f0e68c;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8b0000, #f0e68c);
+  transition: width 0.3s ease;
+}
+
+.footer-section:hover h3 {
+  color: #8b0000;
+  transform: translateX(5px);
+}
+
+.footer-section:hover h3::after {
+  width: 100%;
+}
+
+.footer-section a {
+  display: block;
+  color: #fffacd;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 2px 0;
+}
+
+.footer-section a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #8b0000;
+  transition: width 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #8b0000;
+  transform: translateX(8px);
+  text-shadow: 0 0 8px rgba(139, 0, 0, 0.3);
+}
+
+.footer-section a:hover::before {
+  width: 100%;
+}
+
+.footer-section a:active {
+  transform: translateX(4px);
+  transition: transform 0.1s ease;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  color: #f0e68c;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.footer-bottom:hover {
+  color: #8b0000;
+  transform: scale(1.02);
+}
+
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+  vertical-align: middle;
+  color: #fffacd;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover .footer-icon {
+  color: #f0e68c;
+}
+
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .footer-section {
+    min-width: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-section a:hover {
+    transform: translateY(-2px);
+  }
+} 
